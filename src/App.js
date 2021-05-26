@@ -6,19 +6,15 @@ function App () {
 	 <div className="App">
 		 <header className="App-header">
 			 <User
-			  username="Boy"
 			 />
 
 			 <User
-			  username="Janneke"
 			 />
 
 			 <User
-			  username="Loki"
 			 />
 
 			 <User
-			  username="Chewie"
 			 />
 
 		 </header>
