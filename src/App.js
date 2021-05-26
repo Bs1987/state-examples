@@ -12,12 +12,15 @@ function App () {
 			 <User
 			  username="Janneke"
 			 />
+
 			 <User
 			  username="Loki"
 			 />
+
 			 <User
 			  username="Chewie"
 			 />
+
 		 </header>
 	 </div>
 	);
