@@ -13,9 +13,14 @@ function User (props) {
 	return (
 	 <div>
 		 {props.username}: {score}
+		 {/*{ score === 10 && <p>You have won!!</p>}*/}
+		 {score === 10 ? (
+		  <p>You have won!!</p>
+		 ) : (
+		  <p>You lose!</p>
+		 )}
 		 <button onClick={() => setScore(score + 1)}>+</button>
 		 <button onClick={() => setScore(score - 1)}>-</button>
-
 	 </div>
 	);
 }
