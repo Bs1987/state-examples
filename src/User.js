@@ -22,22 +22,24 @@ function User (props) {
 
 	return (
 	 <div>
-		 {editMode &&
-		 <PlayerForm
-		  name={name}
-		  avatar={avatar}
-		  setAvatar={setAvatar}
-		  setName={setName}
-		  setEditMode={setEditmode}/>
-		 }
-		 <PlayerScore
-		  avatar={avatar}
-		  name={name}
-		  score={score}
-		  setScore={setScore}
-		  setEditMode={setEditmode}
-		  editMode={editMode}
-		 />
+		 {editMode ? (
+		  <PlayerForm
+		   name={name}
+		   avatar={avatar}
+		   setAvatar={setAvatar}
+		   setName={setName}
+		   setEditMode={setEditmode}
+		  />
+		 ) : (
+		  <PlayerScore
+		   avatar={avatar}
+		   name={name}
+		   score={score}
+		   setScore={setScore}
+		   setEditMode={setEditmode}
+		   editMode={editMode}
+		  />
+		 )}
 	 </div>
 	);
 }

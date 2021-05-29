@@ -7,8 +7,7 @@ function PlayerScore (props) {
 		 <button onClick={() => props.setScore(props.score - 1)}>-</button>
 		 <button onClick={() => props.setEditMode(!props.editMode)}>📝</button>
 	 </div>
-	)
-	 ;
+	);
 }
 
 export default PlayerScore;
