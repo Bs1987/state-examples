@@ -30,6 +30,7 @@ function User (props) {
 		 {/*{score ==s*/}
 		 <button onClick={() => setScore(score + 1)}>+</button>
 		 <button onClick={() => setScore(score - 1)}>-</button>
+		 <button>📝</button>
 	 </div>
 	);
 }
