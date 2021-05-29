@@ -1,4 +1,6 @@
 import {useState} from "react";
+import PlayerForm from "./PlayerForm"
+import PlayerScore from "./PlayerScore"
 
 function User (props) {
 	// score: getter current state of "score"
@@ -7,9 +9,9 @@ function User (props) {
 	//useState is a hook: starts with "use"
 
 	const [score, setScore] = useState(0);
-	const [name, setName] = useState("Boy");
-	const [avatar, setAvatar] = useState("😮")
-	const [editMode, setEditmote] = useState(false);
+	const [name, setName] = useState("");
+	const [avatar, setAvatar] = useState("")
+	const [editMode, setEditmode] = useState(false);
 
 	//onclick
 	// formulier laten verdwijnen
@@ -20,27 +22,22 @@ function User (props) {
 
 	return (
 	 <div>
-		 {editMode && <div>
-			 <label>Playername </label>
-			 <input
-			  value={name}
-			  onChange={(event) => setName(event.target.value)}
-			 />
-			 <button onClick={() => setEditmote(false)}>Submit</button>
-			 <select
-			  value={avatar}
-			  onChange={(event) => setAvatar(event.target.value)}
-			 >
-				 <option>😁</option>
-				 <option>🙀</option>
-				 <option>😍</option>
-				 <option>😎</option>
-			 </select>
-		 </div>}
-		 {avatar} - {name}: {score}
-		 <button onClick={() => setScore(score + 1)}>+</button>
-		 <button onClick={() => setScore(score - 1)}>-</button>
-		 <button onClick={() => setEditmote(!editMode)}>📝</button>
+		 {editMode &&
+		 <PlayerForm
+		  name={name}
+		  avatar={avatar}
+		  setAvatar={setAvatar}
+		  setName={setName}
+		  setEditMode={setEditmode}/>
+		 }
+		 <PlayerScore
+		  avatar={avatar}
+		  name={name}
+		  score={score}
+		  setScore={setScore}
+		  setEditMode={setEditmode}
+		  editMode={editMode}
+		 />
 	 </div>
 	);
 }
